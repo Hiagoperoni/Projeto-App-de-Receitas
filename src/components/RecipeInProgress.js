@@ -169,7 +169,7 @@ function RecipeInProgress(props) {
   };
 
   return (
-    <div>
+    <div className="inProgress">
       {
         receita && (
           <div>
@@ -186,51 +186,57 @@ function RecipeInProgress(props) {
             <div>
               <p data-testid="instructions">Instruções</p>
             </div>
-            {
-              ingredientes && ingredientes.map(
-                (cadaUm, index) => (
-                  <label
-                    htmlFor={ cadaUm }
-                    key={ index }
-                    data-testid={ `${index}-ingredient-step` }
-                    className={ (localStorage
-                      .getItem('inProgressRecipes').includes(cadaUm))
-                      ? 'riscarPalavra' : null }
-                  >
-                    {cadaUm}
-                    {
-                      localStorage.getItem('inProgressRecipes')
-                        .includes(cadaUm) ? (
-                          <input
-                            type="checkbox"
-                            name={ cadaUm }
-                            onChange={ riscarSelecionado }
-                            checked
-                          />
-                        ) : (
-                          <input
-                            type="checkbox"
-                            name={ cadaUm }
-                            onChange={ riscarSelecionado }
-                          />
-                        )
-                    }
-                  </label>
-                ),
-              )
-            }
-            <button type="button" onClick={ copiarProClipBoard } data-testid="share-btn">
-              Share
-            </button>
-            { copiado && (<p>Link copied!</p>) }
-            <button type="button" onClick={ () => favReceita(receita[nomeReceita]) }>
-              <img data-testid="favorite-btn" src={ foiFavorito } alt="favoritado" />
-            </button>
+            <div className="ingredientes">
+
+              {
+                ingredientes && ingredientes.map(
+                  (cadaUm, index) => (
+                    <label
+                      htmlFor={ cadaUm }
+                      key={ index }
+                      data-testid={ `${index}-ingredient-step` }
+                      className={ (localStorage
+                        .getItem('inProgressRecipes').includes(cadaUm))
+                        ? 'riscarPalavra' : null }
+                    >
+                      {cadaUm}
+                      {
+                        localStorage.getItem('inProgressRecipes')
+                          .includes(cadaUm) ? (
+                            <input
+                              type="checkbox"
+                              name={ cadaUm }
+                              onChange={ riscarSelecionado }
+                              checked
+                            />
+                          ) : (
+                            <input
+                              type="checkbox"
+                              name={ cadaUm }
+                              onChange={ riscarSelecionado }
+                            />
+                          )
+                      }
+                    </label>
+                  ),
+                )
+              }
+            </div>
+            <div>
+              <button type="button" onClick={ copiarProClipBoard } data-testid="share-btn" className="buttonForm">
+                Share
+              </button>
+              { copiado && (<p>Link copied!</p>) }
+              <button type="button" onClick={ () => favReceita(receita[nomeReceita]) } className="buttonForm">
+                <img data-testid="favorite-btn" src={ foiFavorito } alt="favoritado" />
+              </button>
+            </div>
             <button
               type="button"
               data-testid="finish-recipe-btn"
               disabled={ disabled }
               onClick={ salvarEMudarDePag }
+              className="buttonForm"
             >
               Finish Recipe
             </button>

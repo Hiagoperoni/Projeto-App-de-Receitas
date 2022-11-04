@@ -12,26 +12,40 @@
 
 .rocksGlass {
   animation: shake 1s infinite ease;
-  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  max-height: 25vh;
 }
 
 .riscarPalavra {
   text-decoration: line-through solid black;
 }
 
-/*
-#iceLeft {
-  animation: clink .8s infinite ease;
-  opacity: 0.6;
-  transform-origin: 36px 66px;
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-#iceRight {
-  animation: clink .8s .2s infinite ease;
-  opacity: 0.6;
-  transform-origin: 60px 78px;
+.formInput {
+  border: transparent;
+  border-radius: 5px;
+  margin: 5%;
+  text-align: center;
 }
-*/
+
+.buttonForm {
+  border: transparent;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px white;
+  margin: 5%;
+  text-align: center;
+}
+
+.logo {
+  color: white;
+  font-size: 2em;
+}
 
 .meals > .logo {
   animation: shake 1.5s infinite ease;
@@ -40,6 +54,41 @@
   font-size: 3em;
   font-weight: 900;
 }
+
+.loginPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  color: white;
+  font-size: 3em;
+  text-shadow: 10px 10px 10px 10px white;
+}
+
+.botoesDePesquisa {
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+.searchBar {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.radioSearch {
+  color: white;
+  margin: 1%;
+}
+
 
 @keyframes shake {
 
@@ -72,6 +121,8 @@
 }
 
 .cardFood {
+  color: white;
+  text-decoration: none;
   width: 50px;
 }
 
@@ -85,12 +136,15 @@
 .recipe-details {
   align-items: center;
   background: #0fa36b;
-  color: #464646;
+  background-size: cover;
+  color: white;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
   height: 100vh;
   justify-content: center;
+  margin-top: 100%;
+  padding: 10%;
   width: 100%;
 
 }
@@ -101,4 +155,35 @@
 
 .start-recipe-btn {
   bottom: 0;
+}
+
+footer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.inProgress {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ingredientes {
+  display: flex;
+  flex-direction: column;
+}
+
+.doneRecipes {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.manutencao {
+  width: 100px;
 }

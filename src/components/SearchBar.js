@@ -59,19 +59,21 @@ function SearchBar(props) {
   useEffect(salvarPorQuantidade, [recipesMeals, recipesDrinks]);
 
   return (
-    <div>
+    <div className="searchBar">
       <input
         type="text"
         data-testid="search-input"
         onChange={ valorParaBuscar }
+        className="formInput"
       />
-      <label htmlFor="searchOptions">
+      <label htmlFor="searchOptions" className="radioButtons">
         Ingredient
         <input
           type="radio"
           data-testid="ingredient-search-radio"
           name="searchOptions"
           value="ingredient"
+          className="radioSearch"
           onClick={ valorDoRadio }
         />
         Name
@@ -79,6 +81,7 @@ function SearchBar(props) {
           type="radio"
           data-testid="name-search-radio"
           name="searchOptions"
+          className="radioSearch"
           value="name"
           onClick={ valorDoRadio }
         />
@@ -87,6 +90,7 @@ function SearchBar(props) {
           type="radio"
           data-testid="first-letter-search-radio"
           name="searchOptions"
+          className="radioSearch"
           value="firstletter"
           onClick={ valorDoRadio }
         />
@@ -95,6 +99,7 @@ function SearchBar(props) {
         type="button"
         data-testid="exec-search-btn"
         onClick={ qualTipoDeReceitaBuscar }
+        className="buttonForm"
       >
         Search
       </button>

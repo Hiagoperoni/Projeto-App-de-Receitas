@@ -141,7 +141,7 @@ function Recipes(props) {
 
   return (
     <div>
-      <label htmlFor="categories">
+      <label htmlFor="categories" className="radioSearch">
         All
         <input
           type="radio"
@@ -154,7 +154,7 @@ function Recipes(props) {
       </label>
       {
         category && category.map(({ strCategory }) => (
-          <label htmlFor="categories" key={ strCategory }>
+          <label htmlFor="categories" key={ strCategory } className="radioSearch">
             {strCategory}
             <input
               type="radio"

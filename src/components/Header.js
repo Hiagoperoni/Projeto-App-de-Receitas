@@ -20,26 +20,28 @@ function Header(props) {
   };
   return (
     <header>
-      <h1 data-testid="page-title">{titulo}</h1>
-      <button type="button" src={ profileIcon } onClick={ paginaDePerfil }>
-        <img src={ profileIcon } alt="profileIcon" data-testid="profile-top-btn" />
-      </button>
-      {
-        pesquisa === 'true'
-          ? (
-            <button
-              type="button"
-              data-testid="search-top-btn"
-              src={ searchIcon }
-              onClick={ showSearchBar }
-            >
-              <img src={ searchIcon } alt="searchIcon" />
-            </button>
-          ) : null
-      }
-      {
-        searchBar && <SearchBar pagina={ titulo.toLowerCase() } />
-      }
+      <h1 data-testid="page-title" className="titulo">{titulo}</h1>
+      <div className="botoesDePesquisa">
+        <button type="button" src={ profileIcon } onClick={ paginaDePerfil }>
+          <img src={ profileIcon } alt="profileIcon" data-testid="profile-top-btn" />
+        </button>
+        {
+          pesquisa === 'true'
+            ? (
+              <button
+                type="button"
+                data-testid="search-top-btn"
+                src={ searchIcon }
+                onClick={ showSearchBar }
+              >
+                <img src={ searchIcon } alt="searchIcon" />
+              </button>
+            ) : null
+        }
+        {
+          searchBar && <SearchBar pagina={ titulo.toLowerCase() } />
+        }
+      </div>
     </header>
   );
 }

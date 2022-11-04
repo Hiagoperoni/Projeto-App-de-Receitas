@@ -22,6 +22,7 @@ function Footer() {
     <div
       data-testid="footer"
       style={ styleDiv }
+      className="footerButtons"
     >
       <button
         type="button"
